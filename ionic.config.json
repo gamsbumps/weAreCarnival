@@ -1,0 +1,7 @@
+{
+  "name": "weAreCarnival",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
