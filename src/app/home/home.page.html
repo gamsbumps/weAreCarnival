@@ -1,14 +1,77 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Home
-    </ion-title>
-  </ion-toolbar>
-</ion-header> -->
-
 <ion-content [fullscreen]="true">
 
   <ion-searchbar animated="true" placeholder="Eventos e Locais"></ion-searchbar>
 
+  <div>
+    <ion-grid [fixed]="true">
+      <ion-row class="ion-no-padding">
+        <ion-col size="12">
+          <h4 class="section-header">Grandes blocos gratuitos</h4>
+        </ion-col>
+     </ion-row>
+    </ion-grid>
+  </div>
+
+  <ion-slides [options]="opts">
+     <ion-slide *ngFor="let item of items" tappable>
+       <ion-grid>
+          <ion-row>
+            <img alt="Silhouette of mountains" src="{{item.img}}"/>
+          </ion-row>
+          <ion-row class="titulo">
+            <b>{{item.name}}</b>
+          </ion-row >
+          <ion-row class="fonte">
+             {{item.data}}
+          </ion-row>
+          <ion-row class="fonte">
+             {{item.local}}
+          </ion-row>
+       </ion-grid>
+     </ion-slide>
+   </ion-slides>
+
+   <div>
+    <ion-grid [fixed]="true">
+      <ion-row class="ion-no-padding">
+        <ion-col size="12">
+          <h4 class="section-header">Eventos Pagos</h4>
+        </ion-col>
+     </ion-row>
+    </ion-grid>
+  </div>
+
+   <ion-slides [options]="opts">
+    <ion-slide *ngFor="let item of items" tappable>
+      <ion-grid>
+         <ion-row>
+           <img alt="Silhouette of mountains" src="{{item.img}}"/>
+         </ion-row>
+         <ion-row class="titulo">
+           <b>{{item.name}}</b>
+         </ion-row >
+         <ion-row class="fonte">
+            {{item.data}}
+         </ion-row>
+         <ion-row class="fonte">
+            {{item.local}}
+         </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+
+   <div>
+    <ion-grid [fixed]="true">
+      <ion-row class="ion-no-padding">
+        <ion-col size="12">
+          <h4 class="section-header">Programe o seu Carnaval</h4>
+        </ion-col>
+     </ion-row>
+  </ion-grid>
+    <app-card-expansivo
+     *ngFor="let item of programacao; let i = index"
+     [titulo]="item.dia">
+    </app-card-expansivo>
+  </div>
 
 </ion-content>

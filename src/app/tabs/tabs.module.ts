@@ -9,13 +9,15 @@ import { TabsPageRoutingModule } from './tabs-routing.module';
 import { TabsPage } from './tabs.page';
 import { PerfilPage } from '../perfil/perfil.page';
 import { HomePage } from '../home/home.page';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    SharedModule
   ],
   declarations: [
     TabsPage,
