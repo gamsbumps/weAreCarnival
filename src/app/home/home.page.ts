@@ -1,36 +1,52 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss']
 })
-export class HomePage {
+export class HomePage implements OnInit {
 
-  items = [ { "name": "Varejo 360",
+  items = [ {
+  "id": 1,
+  "name": "Varejo 360",
   "img": "./assets/imagens/1.png",
   "data": " Qui, 09 Mar - 19:00",
   "local": "Sebrae - Recife"
 },
-{ "name": "A Cor Purpura",
+{
+  "id": 2,
+  "name": "A Cor Purpura",
   "img": "./assets/imagens/2.png",
   "data": " Qui, 09 Mar - 19:00",
   "local": "Teatro do Parque - Recife"
+
 },
-{ "name": "A Arte do Estoicismo",
+{
+ "id": 3,
+ "name": "A Arte do Estoicismo",
  "img": "./assets/imagens/3.jpg",
  "data": " Qui, 09 Mar - 19:00",
  "local": "Online"
+
 },
-{  "name": "Terra por elas Convida",
+{
+  "id": 4,
+  "name": "Terra por elas Convida",
   "img": "./assets/imagens/4.jpg",
   "data": " Qui, 09 Mar - 19:00",
   "local": "Sebrae - Recife"
+
 },
-{ "name": "Match Hall",
+{
+  "id": 5,
+  "name": "Match Hall",
   "img": "./assets/imagens/5.png",
   "data": " Qui, 09 Mar - 19:00",
   "local": "Sebrae - Recife"
+
 }
 ]
 
@@ -65,6 +81,26 @@ spaceBetween: 10,
 freeMode: true
 }
 
-  constructor() {}
+presentingElement: any = null;
+
+
+  constructor(private router: Router){
+
+  }
+
+  ngOnInit() {
+    // this.presentingElement = document.querySelector('.ion-modal');
+  }
+
+
+  irModallistEventos(){
+    this.router.navigate(['tabs/listaEventos']);
+  }
+
+  irModalDetalhes(id: any){
+    this.router.navigate(['tabs/detalhes/' + id]);
+  }
+
+
 
 }

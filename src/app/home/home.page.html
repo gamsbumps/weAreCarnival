@@ -13,10 +13,10 @@
   </div>
 
   <ion-slides [options]="opts">
-     <ion-slide *ngFor="let item of items" tappable>
+     <ion-slide *ngFor="let item of items, let i = index" tappable (click)="irModalDetalhes(item.id)">
        <ion-grid>
           <ion-row>
-            <img alt="Silhouette of mountains" src="{{item.img}}"/>
+            <img src="{{item.img}}"/>
           </ion-row>
           <ion-row class="titulo">
             <b>{{item.name}}</b>
@@ -27,6 +27,8 @@
           <ion-row class="fonte">
              {{item.local}}
           </ion-row>
+          <!-- <ion-button id="open-modal">ver mais</ion-button> -->
+
        </ion-grid>
      </ion-slide>
    </ion-slides>
@@ -42,7 +44,7 @@
   </div>
 
    <ion-slides [options]="opts">
-    <ion-slide *ngFor="let item of items" tappable>
+    <ion-slide *ngFor="let item of items" tappable >
       <ion-grid>
          <ion-row>
            <img alt="Silhouette of mountains" src="{{item.img}}"/>
@@ -69,9 +71,67 @@
      </ion-row>
   </ion-grid>
     <app-card-expansivo
+     (click)="irModallistEventos()"
      *ngFor="let item of programacao; let i = index"
      [titulo]="item.dia">
     </app-card-expansivo>
   </div>
+
+  <!-- <div class="ion-modal">
+    <ion-modal #modal trigger="open-modal" [presentingElement]="presentingElement">
+      <ng-template>
+        <ion-header>
+          <ion-toolbar>
+            <ion-title>Modal</ion-title>
+            <ion-buttons slot="end">
+              <ion-button (click)="modal.dismiss()">Close</ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <ion-list>
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-img src="https://i.pravatar.cc/300?u=b"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <h2>Connor Smith</h2>
+                <p>Sales Rep</p>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-img src="https://i.pravatar.cc/300?u=a"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <h2>Daniel Smith</h2>
+                <p>Product Designer</p>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-img src="https://i.pravatar.cc/300?u=d"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <h2>Greg Smith</h2>
+                <p>Director of Operations</p>
+              </ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-avatar slot="start">
+                <ion-img src="https://i.pravatar.cc/300?u=e"></ion-img>
+              </ion-avatar>
+              <ion-label>
+                <h2>Zoey Smith</h2>
+                <p>CEO</p>
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </ion-content>
+      </ng-template>
+    </ion-modal>
+
+  </div> -->
+
 
 </ion-content>

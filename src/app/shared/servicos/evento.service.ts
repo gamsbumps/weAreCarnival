@@ -10,9 +10,14 @@ export class EventoService {
   url: string = 'http://localhost:3000/'
 
 
+
   constructor(private http: HttpClient) { }
 
   buscarEventosPorCidade(cidade: string) {
     return this.http.get(this.url +'evento?cidade=' + cidade)
+ }
+
+  buscarEventoPorId(id: any){
+    return this.http.get(this.url + 'itens?id='+ id)
  }
 }

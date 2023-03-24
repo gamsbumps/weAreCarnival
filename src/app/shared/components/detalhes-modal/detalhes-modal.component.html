@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>Cancel</ion-button>
+    </ion-buttons>
+    <ion-title *ngIf="objeto">{{objeto[0].name}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button >Done</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div *ngIf="objeto">
+    <ion-img src="{{objeto[0].img}}"></ion-img>
+
+  </div>
+
+</ion-content>
