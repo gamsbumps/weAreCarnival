@@ -1,0 +1,52 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-segment value="all">
+      <ion-segment-button value="all">
+        <ion-label>All</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        <ion-label>Favorites</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button>Cancel</ion-button>
+    </ion-buttons>
+    <ion-title>Quinta-feira</ion-title>
+    <ion-buttons slot="end">
+      <ion-button >Done</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-segment value="all">
+      <ion-segment-button value="all">
+        <ion-label>Olinda</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="favorites">
+        <ion-label>Recife</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light" [fullscreen]="true">
+  <ion-list id="modal-list" [inset]="true">
+    <ion-item *ngFor="let item of items">
+      <ion-avatar slot="start">
+        <ion-img src="{{item.img}}"></ion-img>
+      </ion-avatar>
+      <ion-label>
+       <h3>{{item.name}} </h3>
+       <p>{{item.data}}</p>
+       <p>{{item.local}}</p>
+      </ion-label>
+      <ion-checkbox></ion-checkbox>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
