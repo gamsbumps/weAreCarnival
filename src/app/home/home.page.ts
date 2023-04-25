@@ -83,6 +83,11 @@ freeMode: true
 
 presentingElement: any = null;
 
+showPesquisa: boolean = false;
+
+public results = [...this.items];
+
+
 
   constructor(private router: Router){
 
@@ -100,6 +105,13 @@ presentingElement: any = null;
   irModalDetalhes(id: any){
     this.router.navigate(['tabs/detalhes/' + id]);
   }
+
+  handleInput(event: any) {
+   this.showPesquisa = true;
+   if(event.target.value === ""){this.showPesquisa = false;}
+  }
+
+
 
 
 
