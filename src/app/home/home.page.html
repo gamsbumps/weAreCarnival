@@ -1,8 +1,44 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-searchbar
+       animated="true"
+       placeholder="Eventos e Locais"
+       show-cancel-button="focus"
+       (ionInput)="handleInput($event)"
+       color="light"
+    ></ion-searchbar>
+  </ion-toolbar>
+  <ion-toolbar *ngIf="showPesquisa===true">
+    <ion-list>
+      <ion-item *ngFor="let result of results">
+        <ion-label>{{ result.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+</ion-header> -->
+
+
 <ion-content [fullscreen]="true">
 
-  <ion-searchbar animated="true" placeholder="Eventos e Locais"></ion-searchbar>
 
-  <div>
+  <ion-searchbar
+  animated="true"
+  placeholder="Eventos e Locais"
+  show-cancel-button="focus"
+  (ionInput)="handleInput($event)"
+  color="light"
+  ></ion-searchbar>
+  <ion-toolbar *ngIf="showPesquisa===true">
+    <ion-list>
+      <ion-item *ngFor="let result of results">
+        <ion-label>{{ result.name }}</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-toolbar>
+
+
+
+  <div *ngIf="showPesquisa===false">
     <ion-grid [fixed]="true">
       <ion-row class="ion-no-padding">
         <ion-col size="12">
@@ -27,7 +63,6 @@
           <ion-row class="fonte">
              {{item.local}}
           </ion-row>
-          <!-- <ion-button id="open-modal">ver mais</ion-button> -->
 
        </ion-grid>
      </ion-slide>
