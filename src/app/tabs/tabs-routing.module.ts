@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { FavoritosPage } from '../favoritos/favoritos.page';
+import { HomePage } from '../home/home.page';
+import { PerfilPage } from '../perfil/perfil.page';
+import { DetalhesModalComponent } from '../shared/components/detalhes-modal/detalhes-modal.component';
+import { ListaModalComponent } from '../shared/components/lista-modal/lista-modal.component';
 import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
@@ -8,27 +13,38 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
-        loadChildren: () => import('../tab1/tab1.module').then(m => m.Tab1PageModule)
+        path: 'home',
+        component: HomePage,
+
       },
       {
-        path: 'tab2',
-        loadChildren: () => import('../tab2/tab2.module').then(m => m.Tab2PageModule)
+        path: 'listaEventos',
+        component: ListaModalComponent,
       },
       {
-        path: 'tab3',
-        loadChildren: () => import('../tab3/tab3.module').then(m => m.Tab3PageModule)
+        path: 'detalhes/:id',
+        component: DetalhesModalComponent,
+      },
+      {
+        path: 'favoritos',
+        component: FavoritosPage,
+
+      },
+      {
+        path: 'perfil',
+        component: PerfilPage,
+
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/home',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/home',
     pathMatch: 'full'
   }
 ];
