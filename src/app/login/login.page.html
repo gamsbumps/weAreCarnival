@@ -1,0 +1,31 @@
+<ion-content scrollY="false" >
+  <ion-grid>
+    <form>
+      <ion-row class=" ion-no-padding">
+        <ion-col>
+          <ion-img class="ion-no-padding"
+            src="../assets/icon/weare2.png"
+            alt="We Are Carnival Logo"
+          ></ion-img>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center email">
+        <ion-col class="input-col-paddin">
+          <ion-item>
+            <ion-label position="floating" >Email</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row class="ion-justify-content-center password">
+        <ion-col>
+          <ion-item >
+            <ion-label position="floating">Senha</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-button class="margin-top" (click)="login()" routerLink="">LOGIN</ion-button>
+    </form>
+  </ion-grid>
+</ion-content>
